@@ -1,0 +1,10 @@
+1/2n(n+1) 1/2(n+1)(n+2)
+(n+1) is difference
+javascript:function divisors(n){var divs=[]; for(i=1;i<=n;++i) if(n%i==0) divs[divs.length]=i; return divs;};var t=1,u=1;while(t<100000){if (divisors(u).length>200){alert(u);break;}++t;u=u+t;};
+
+javascript:var ps=[];function prime(n){for(var i in ps){if(n%ps[i]==0){return false;}}ps[ps.length]=n;return true;} var t=2; while(ps.length<=500){prime(t);++t;}document.write(ps);
+no
+
+GCM...
+first number to have over 500 divisors
+javascript:function zero(len){var ks=[];for(i=0;i<len;++i){ks[i]=0;}return ks;} var ps=[]; function prime(n){for(var i in ps){if(n%ps[i]==0){return false;}}ps[ps.length]=n;return true;} var t=2;while(t<=500){prime(t);++t;} function primedivs(n){var divs=zero(ps.length);while(n>1){for(var i in ps){if(n%ps[i]==0){n/=ps[i];++divs[i];}}}return divs;} function merge(us, vs){var ns=zero(ps.length);for(var i in ps){ns[i]=Math.max(us[i],vs[i]);}return ns;} t=2; var ts=zero(ps.length); while(t<=500){ts=merge(ts, primedivs(t));++t;};var total=1;for(var i in ps){total*=Math.pow(ps[i],ts[i]);document.write(ps[i] + " " + ts[i] + "<br />");};
