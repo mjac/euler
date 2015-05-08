@@ -18,6 +18,7 @@ let test n = match n with
     | 27 -> (fun () -> let a,b,c = Problem27.maxProduct 1000 in a*b), -59231
     | 30 -> (fun () -> 2), 443839
     | 31 -> (fun () -> Problem31.changeCount 200 [200;100;50;20;10;5;2;1]), 73682
+    | 32 -> (fun () -> Problem32.pandigitalSum), 0
     | 39 -> (fun () -> let a,b = Problem39.maxSols 1000 in a), 840
     | _ -> raise MissingSolution
 
